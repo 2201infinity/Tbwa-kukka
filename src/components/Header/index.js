@@ -3,22 +3,18 @@ import "./styles.css";
 export default class Header {
   constructor($target) {
     this.$container = document.createElement("header");
-    this.$container.className = "Header";
+    this.$container.id = "Header";
     $target.appendChild(this.$container);
     this.render();
-  }
-
-  onClick() {
-    alert("안녕하세요");
   }
 
   render() {
     this.$container.innerHTML = ``;
 
-    const $button = document.createElement("button");
-    $button.innerText = "클릭";
-    $button.addEventListener("click", this.onClick.bind(this));
+    const $innerHeader = document.createElement("div");
+    $innerHeader.className = "inner-header";
+    $innerHeader.innerText = "난 헤더야";
 
-    this.$container.appendChild($button);
+    this.$container.appendChild($innerHeader);
   }
 }
