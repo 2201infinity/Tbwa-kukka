@@ -8,4 +8,28 @@
   height: 100%;
   margin: 0 auto;
   background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+}
+
+.menu-item {
+  margin-left: 20px;
+  padding-bottom: 10px;
+  transition: background-color 0.5s;
+  border-bottom: 2px solid transparent;
+}
+
+.menu-item:hover {
+  border-bottom: 2px solid #ffcd32;
+}
+
+.user-menu {
+  display: flex;
 }
