@@ -3,6 +3,7 @@ import Header from "./components/Header/index.js";
 import IFrameBox from "./components/IFrameBox/index.js";
 import ImageBanner from "./components/ImageBanner/index.js";
 import ImageSlider from "./components/ImageSlider/index.js";
+import Popup from "./components/Popup/index.js";
 
 export default class App {
   constructor($app) {
@@ -11,5 +12,6 @@ export default class App {
     new ImageSlider($app);
     new ImageBanner($app);
     new Footer($app);
+    new Popup($app);
   }
 }
