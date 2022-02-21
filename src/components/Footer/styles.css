@@ -1,0 +1,55 @@
+#Footer {
+  width: 100%;
+  height: 379px;
+  color: #ffffff;
+  background-color: black;
+}
+
+#Footer .inner-footer {
+  width: 1120px;
+  padding: 80px 0;
+}
+
+#Footer h3 {
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 500;
+  letter-spacing: -0.33px;
+  color: #f7f7f7;
+  float: left;
+}
+
+#Footer p {
+  float: left;
+  margin-left: 20px;
+  font-size: 22px;
+  line-height: 33px;
+  color: #f7f7f7;
+}
+
+#Footer span {
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 33px;
+  color: #9b9b9b;
+}
+
+#Footer button {
+  width: 125px;
+  height: 36px;
+  padding: 0 20px;
+  border-radius: 18px;
+  font-size: 13px;
+  color: #ffffff;
+  border: #9b9b9b 1px solid;
+}
+
+#Footer .inner-footer .contact-text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+}
+
+#Footer .info-footer {
+  color: #f7f7f7;
+}
