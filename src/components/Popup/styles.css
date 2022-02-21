@@ -10,7 +10,6 @@
 .InnerPopup {
   position: absolute;
   z-index: 9999;
-  background-color: #fff;
   top: 0;
   bottom: 0;
   right: 0;
