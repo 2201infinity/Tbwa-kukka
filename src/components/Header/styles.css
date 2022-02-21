@@ -1,0 +1,11 @@
+#Header {
+  height: 90px;
+  width: 100%;
+}
+
+.inner-header {
+  width: 1240px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: aquamarine;
+}
