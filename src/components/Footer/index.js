@@ -23,8 +23,9 @@ export default class Footer {
     </nav>
     <h3> 꾸까 고객센터 <span class="tel-text"> 1661-1031 </span></h3>
     <span class="work-hour">(평일 10:00 - 13:00, 14:00 - 18:00 / 주말 & 공휴일 제외)</span>
+    <button class="web-btn">꾸까 고객센터</button>
     <p class="contact-text">기업제휴 문의 : 070-4238-8251</p>
-    <button>꾸까 고객센터</button>
+    <button class="mobile-btn">꾸까 고객센터</button>
     <div class="logo"></div>
     </div>
     <hr/>
@@ -40,8 +41,8 @@ export default class Footer {
     </div>
     <p class="copy"> &copy; 2014-2021 kukka, Inc. All rights reserved. </p>
     <nav class="footer-aside">
-    <a class="link" href="/agreement/?next=/">이용약관</a>
-    <a class="link" href="/privacy/?next=/">개인정보 처리방침</a>
+    <a class="link" href="https://kukka.kr/agreement/?next=/">이용약관</a>
+    <a class="link" href="https://kukka.kr/privacy/?next=/">개인정보 처리방침</a>
     <a class="link end" href="https://partners.kukka.kr/" target="_blank">제휴안내</a>
     </nav>
 
