@@ -28,14 +28,21 @@ export default class Popup {
     $PopupImage.alt = "Popup Image";
     $PopupImage.style.width = "100%";
 
+    const $PopupFooter = document.createElement("div");
+    $PopupFooter.className = "PopupFooter";
+
     const $PopupCloseButton = document.createElement("button");
     $PopupCloseButton.className = "PopupCloseButton";
-    $PopupCloseButton.innerText = "닫기";
-    $PopupCloseButton.addEventListener("click", () =>
-      this.onClosePopup().bind(this)
-    );
+    $PopupCloseButton.addEventListener("click", this.onClosePopup.bind(this));
+
+    const $PopupTimeCloseButton = document.createElement("button");
+    $PopupTimeCloseButton.className = "PopupTimeCloseButton";
+
+    $PopupFooter.appendChild($PopupCloseButton);
+    $PopupFooter.appendChild($PopupTimeCloseButton);
+
     $InnerPopup.appendChild($PopupImage);
-    $InnerPopup.appendChild($PopupCloseButton);
+    $InnerPopup.appendChild($PopupFooter);
 
     this.$container.appendChild($InnerPopup);
     this.$container.appendChild($PopupBackground);

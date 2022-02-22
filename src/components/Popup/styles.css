@@ -30,3 +30,38 @@
   top: 0;
   opacity: 0.4;
 }
+
+.PopupImage {
+  vertical-align: top;
+}
+
+.PopupFooter {
+  height: 34px;
+  background-color: #1c1c1c;
+}
+
+.PopupCloseButton {
+  z-index: 2;
+  float: right;
+  width: 70px;
+  height: 34px;
+  background-position: -309px -150px;
+  position: static;
+  background-image: url(https://kukka-2-media-123.s3.amazonaws.com/static/kukkart_new/img/common/common_v24.png);
+  background-size: 500px 200px;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.PopupTimeCloseButton {
+  z-index: 2;
+  float: left;
+  width: 145px;
+  height: 34px;
+  background-position: -159px -150px;
+  position: static;
+  background-image: url(https://kukka-2-media-123.s3.amazonaws.com/static/kukkart_new/img/common/common_v24.png);
+  background-size: 500px 200px;
+  background-repeat: no-repeat;
+  display: block;
+}
