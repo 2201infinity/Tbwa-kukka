@@ -1,4 +1,7 @@
-import { POPUP_CONTENT_IMAGE } from "../../utils/constants.js";
+import {
+  POPUP_CONTENT_IMAGE,
+  POPUP_COOKIE_NAME,
+} from "../../utils/constants.js";
 import cookie from "../../utils/cookie.js";
 import { dateOfOneDay } from "../../utils/date.js";
 import "./styles.css";
@@ -8,7 +11,7 @@ export default class Popup {
     this.$container = document.createElement("div");
     this.$container.id = "Popup";
     $target.appendChild(this.$container);
-    cookie.get("Popup") ? this.$container.remove() : this.render();
+    cookie.get(POPUP_COOKIE_NAME) ? this.$container.remove() : this.render();
   }
 
   onClosePopup() {
@@ -17,7 +20,7 @@ export default class Popup {
   }
 
   onCloseTodayPopup() {
-    cookie.set("Popup", "true", dateOfOneDay());
+    cookie.set(POPUP_COOKIE_NAME, "true", dateOfOneDay());
     this.onClosePopup();
   }
 
