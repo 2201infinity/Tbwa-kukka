@@ -8,6 +8,11 @@ export default class Header {
     this.render();
   }
 
+  onClickMenuButton = () => {
+    window.scroll({ top: 1000 });
+    console.log("눌림");
+  };
+
   render() {
     const menus = [
       "꽃 정기구독",
@@ -17,42 +22,58 @@ export default class Header {
       "소품샵",
       "이벤트",
     ];
+
+    const $menuButton = document.createElement("button");
+    $menuButton.className = "menu-button";
+
+    $menuButton.addEventListener("click", this.onClickMenuButton.bind(this));
+
     this.$container.innerHTML = ``;
+
+    const $innerShadow = document.createElement("div");
+    $innerShadow.className = "inner-shadow";
 
     const $innerHeader = document.createElement("div");
     $innerHeader.className = "inner-header";
-    // $innerHeader.innerText = "난 헤더야";
 
     const $menuLogo = document.createElement("a");
     $menuLogo.className = "menu-logo";
     $menuLogo.href = "/";
-    $menuLogo.innerHTML = "KUKKA";
+    $menuLogo.innerHTML = `<img src="https://i.ibb.co/rQtGM58/111.jpg" alt="kukka-logo" border="0">`;
 
     const $menuList = document.createElement("ul");
     $menuList.className = "menu-list";
-    // $menuList.innerHTML = "난 리스트";
 
     menus.map((menu) => {
       const $menuItem = document.createElement("div");
       $menuItem.className = "menu-item";
-      $menuItem.innerHTML = `
+      if (menu === "플라워클래스") {
+        const $listItem = document.createElement("li");
+        $menuItem.appendChild($listItem);
+        $menuButton.innerHTML = menu;
+        $listItem.appendChild($menuButton);
+      } else {
+        $menuItem.innerHTML = `
         <li>
         ${menu}
         </li>
       `;
+      }
       $menuList.appendChild($menuItem);
     });
 
     const $userMenu = document.createElement("ul");
     $userMenu.className = "user-menu";
     $userMenu.innerHTML = `
-      <li>유저</li>
-      <li>장바구니</li>
+      <li><a href="/"><img src="https://i.ibb.co/DQMPFc4/image.png" alt="image" border="0"></a></li>
+      <li><a href="/"><img src="https://i.ibb.co/qpjJ7b7/image.png" alt="image" border="0"></a></li>
     `;
 
     $innerHeader.appendChild($menuLogo);
     $innerHeader.appendChild($menuList);
     $innerHeader.appendChild($userMenu);
-    this.$container.appendChild($innerHeader);
+
+    this.$container.appendChild($innerShadow);
+    $innerShadow.appendChild($innerHeader);
   }
 }
