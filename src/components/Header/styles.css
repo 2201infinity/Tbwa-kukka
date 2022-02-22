@@ -35,6 +35,7 @@
 }
 
 .inner-header {
+  background-color: #ffffff;
   width: 1240px;
   margin: 0 auto;
   display: flex;

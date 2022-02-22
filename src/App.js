@@ -8,8 +8,8 @@ export default class App {
   constructor($app) {
     new Header($app);
     new IFrameBox($app);
-    new ImageBanner($app);
     new ImageSlide($app);
+    new ImageBanner($app);
     new Footer($app);
   }
 }
