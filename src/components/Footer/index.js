@@ -2,7 +2,7 @@ import "./styles.css";
 
 export default class Footer {
   constructor($target) {
-    this.$container = document.createElement("Footer");
+    this.$container = document.createElement("footer");
     this.$container.id = "Footer";
     $target.appendChild(this.$container);
     this.render();
