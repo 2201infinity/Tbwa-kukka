@@ -61,3 +61,10 @@
   width: 145px;
   background-position: -159px -150px;
 }
+
+@media (max-width: 1024px) {
+  #Popup .InnerPopup {
+    max-width: 320px;
+    padding: 10px;
+  }
+}
