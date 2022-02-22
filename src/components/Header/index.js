@@ -9,7 +9,7 @@ export default class Header {
   }
 
   onClickMenuButton = () => {
-    window.scroll({ top: 1000 });
+    window.scroll({ top: 300 });
     console.log("눌림");
   };
 
@@ -39,7 +39,7 @@ export default class Header {
     const $menuLogo = document.createElement("a");
     $menuLogo.className = "menu-logo";
     $menuLogo.href = "/";
-    $menuLogo.innerHTML = `<img src="https://i.ibb.co/rQtGM58/111.jpg" alt="kukka-logo" border="0">`;
+    $menuLogo.innerHTML = `<div></div>`;
 
     const $menuList = document.createElement("ul");
     $menuList.className = "menu-list";
@@ -65,10 +65,26 @@ export default class Header {
     const $userMenu = document.createElement("ul");
     $userMenu.className = "user-menu";
     $userMenu.innerHTML = `
-      <li><a href="/"><img src="https://i.ibb.co/DQMPFc4/image.png" alt="image" border="0"></a></li>
-      <li><a href="/"><img src="https://i.ibb.co/qpjJ7b7/image.png" alt="image" border="0"></a></li>
+      <li><a href="/"><div class="user-menu-profile"></div></a></li>
+      <li><a href="/"><div class="user-menu-cart"></div></a></li>
     `;
 
+    const $responsiveNav = document.createElement("div");
+    $responsiveNav.className = "res-nav";
+    $responsiveNav.innerHTML = `
+      <div>
+        <img class="res-nav-img" src="https://i.ibb.co/rQtGM58/111.jpg" alt="kukka-logo" border="0">
+        <img class="res-nav-icon" src="https://i.ibb.co/qpjJ7b7/image.png" alt="image" border="0">
+      </div>
+      <ul>
+        <li>정기구독</li>
+        <li>꽃다발</li>
+        <li>당일배송</li>
+        <li>플라워클래스</li>
+      </ul>
+    `;
+
+    this.$container.appendChild($responsiveNav);
     $innerHeader.appendChild($menuLogo);
     $innerHeader.appendChild($menuList);
     $innerHeader.appendChild($userMenu);

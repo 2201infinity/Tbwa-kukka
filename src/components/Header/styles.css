@@ -1,5 +1,5 @@
 #Header {
-  height: 90px;
+  height: 94px;
   width: 100%;
   background-color: #ffffff;
   position: fixed;
@@ -7,6 +7,9 @@
   left: 0;
   right: 0;
   z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .inner-shadow::before {
@@ -43,13 +46,14 @@
   align-items: center;
 }
 
-.menu-logo img {
-  width: 145px;
-  height: 80px;
+.menu-logo div {
+  background-image: url("https://kukka-2-media-123.s3.amazonaws.com/static/kukkart_new/img/sprite/kukka.png");
+  background-position: -160px -612px;
+  width: 128px;
+  height: 52px;
 }
 
 .menu-list {
-  display: flex;
   width: 800px;
 }
 
@@ -60,6 +64,7 @@
 }
 
 .menu-item {
+  float: left;
   font-size: 16px;
   line-height: 27px;
   font-weight: 600;
@@ -84,11 +89,86 @@
 }
 
 .user-menu {
-  display: flex;
-}
-
-.user-menu img {
   width: 30px;
   height: 30px;
   margin-left: 20px;
+  display: flex;
+}
+
+.user-menu li {
+  margin-left: 20px;
+}
+.user-menu-profile {
+  background-image: url("https://kukka-2-media-123.s3.amazonaws.com/static/kukkart_new/img/sprite/kukka.png");
+  background-position: -38px -817px;
+  width: 25px;
+  height: 28px;
+}
+
+.user-menu-cart {
+  background-image: url("https://kukka-2-media-123.s3.amazonaws.com/static/kukkart_new/img/sprite/kukka.png");
+  background-position: -73px -817px;
+  width: 25px;
+  height: 28px;
+}
+.res-nav {
+  display: none;
+}
+
+.res-nav-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.res-nav-img {
+  width: 110px;
+  height: 70px;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  #Header {
+    height: 110px;
+  }
+  .inner-shadow::after {
+    background: #e7e4e4;
+  }
+
+  .inner-header {
+    display: none;
+  }
+
+  .res-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    margin-bottom: 60px;
+  }
+
+  .res-nav div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .res-nav ul {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #e7e4e4;
+    text-align: center;
+  }
+
+  .res-nav li {
+    font-size: 15px;
+    height: 120px;
+    width: 150px;
+    padding-bottom: 20px;
+    color: #787878;
+    font-weight: 600;
+    margin-top: 8px;
+    cursor: pointer;
+  }
 }
