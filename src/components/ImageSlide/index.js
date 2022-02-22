@@ -48,12 +48,10 @@ export default class ImageSlide {
     const $nextButton = document.createElement("button");
     const $prevButton = document.createElement("button");
 
-    $nextButton.className = "next-button";
-    $nextButton.innerText = ">";
+    $nextButton.className = "button next-button";
     $nextButton.addEventListener("click", this.onNextButtonClick.bind(this));
 
-    $prevButton.className = "prev-button";
-    $prevButton.innerText = "<";
+    $prevButton.className = "button prev-button";
     $prevButton.addEventListener("click", this.onPrevButtonClick.bind(this));
 
     this.$container.innerHTML = `
@@ -66,7 +64,7 @@ export default class ImageSlide {
             (e, index) => `
               <div class="slide-container ${`slide${index}`}">
                 <div class="image-wrap">
-                  <img src="${e.src}" />
+                  <img src="${e.src}" alt="${e.title}" />
                 </div>
                 <div class="slide-desc">
                   <p>${e.title}</p>

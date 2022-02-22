@@ -1,9 +1,9 @@
 .image-slider {
   position: relative;
-  max-width: 1000px;
+  max-width: 1200px;
+  padding: 30px 100px;
   margin: 0 auto;
   overflow: hidden;
-  padding: 30px;
 }
 .image-slider .header {
   overflow: hidden;
@@ -37,6 +37,9 @@
   width: 49%;
 }
 
+.slide-container img {
+  transition: 0.2s ease-out;
+}
 .slide-container img:hover {
   transform: scale(1.2);
 }
@@ -73,8 +76,14 @@
 
 .slide1 {
   float: right;
-  padding-bottom: 21px;
-  border-bottom: 1.5px solid #333;
+}
+.slide1:after {
+  content: "";
+  display: block;
+  padding-top: 21px;
+  width: 500px;
+  border-bottom: 1.5px solid #ccc;
+  clear: both;
 }
 
 .slide2 {
@@ -84,18 +93,26 @@
 
 .next-button {
   position: absolute;
+  background-image: url("https://kukka-2-media-123.s3.amazonaws.com/static/kukkart_new/img/sprite/kukka.png");
+  background-position: -1108px -492px;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 47.5%;
+  width: 84px;
+  height: 84px;
+  background-size: 1252px 845px;
 }
 .prev-button {
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 47.5%;
+  background-image: url("https://kukka-2-media-123.s3.amazonaws.com/static/kukkart_new/img/sprite/kukka.png");
+  background-position: -1158px -248px;
+  width: 84px;
+  height: 84px;
+  background-size: 1252px 845px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1080px) {
   .slide-container:nth-child(2) .image-wrap {
     width: 45%;
   }
@@ -108,9 +125,12 @@
   .slide0 {
     float: right;
     padding-bottom: 20px;
-    border-bottom: 1.5px solid #333;
+    border-bottom: 1.5px solid #ccc;
   }
   .slide1 {
     padding-top: 20px;
+  }
+  .button {
+    display: none;
   }
 }
