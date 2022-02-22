@@ -1,5 +1,6 @@
 import { POPUP_CONTENT_IMAGE } from "../../utils/constants.js";
 import cookie from "../../utils/cookie.js";
+import { dateOfOneDay } from "../../utils/date.js";
 import "./styles.css";
 
 export default class Popup {
@@ -15,10 +16,8 @@ export default class Popup {
     this.$container.remove();
   }
 
-  onCloseTodyPopup() {
-    const date = new Date();
-    date.setTime(date.getTime() + 1 * 60 * 60 * 24 * 1000);
-    cookie.set("Popup", "true", date);
+  onCloseTodayPopup() {
+    cookie.set("Popup", "true", dateOfOneDay());
     this.onClosePopup();
   }
 
@@ -47,7 +46,7 @@ export default class Popup {
     $PopupTimeCloseButton.className = "PopupTimeCloseButton";
     $PopupTimeCloseButton.addEventListener(
       "click",
-      this.onCloseTodyPopup.bind(this)
+      this.onCloseTodayPopup.bind(this)
     );
 
     $PopupFooter.appendChild($PopupCloseButton);
