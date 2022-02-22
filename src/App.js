@@ -7,7 +7,6 @@ import ImageSlide from "./components/ImageSlide/index.js";
 export default class App {
   constructor($app) {
     new Header($app);
-    new ImageSlide($app);
     new IFrameBox($app);
     new ImageBanner($app);
     new ImageSlide($app);
