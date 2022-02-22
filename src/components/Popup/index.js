@@ -21,12 +21,20 @@ export default class Popup {
     const $PopupBackground = document.createElement("div");
     $PopupBackground.className = "PopupBackground";
 
+    const $PopupImage = document.createElement("img");
+    $PopupImage.className = "PopupImage";
+    $PopupImage.src =
+      "https://kukka-2-media-123.s3.amazonaws.com/media/class-name/ContentsPopups/11/20220221_%EB%B0%B0%EC%86%A1%EC%95%88%EB%82%B4_G6jZAMi.png";
+    $PopupImage.alt = "Popup Image";
+    $PopupImage.style.width = "100%";
+
     const $PopupCloseButton = document.createElement("button");
     $PopupCloseButton.className = "PopupCloseButton";
     $PopupCloseButton.innerText = "닫기";
     $PopupCloseButton.addEventListener("click", () =>
       this.onClosePopup().bind(this)
     );
+    $InnerPopup.appendChild($PopupImage);
     $InnerPopup.appendChild($PopupCloseButton);
 
     this.$container.appendChild($InnerPopup);
