@@ -6,12 +6,26 @@ export default class Popup {
     this.$container = document.createElement("div");
     this.$container.id = "Popup";
     $target.appendChild(this.$container);
-    this.render();
+    this.getCookiePopup() ? this.$container.remove() : this.render();
+  }
+
+  getCookiePopup() {
+    const cookiePopup = document.cookie
+      .split(";")
+      .find((element) => element.includes("Popup="));
+    return cookiePopup === undefined ? false : true;
   }
 
   onClosePopup() {
     document.body.style.overflow = "auto";
     this.$container.remove();
+  }
+
+  onCloseTodyPopup() {
+    const date = new Date();
+    date.setTime(date.getTime() + 1 * 60 * 60 * 24 * 1000);
+    document.cookie = `Popup=${date.getTime()}; expires=${date.toUTCString()}; path=/`;
+    this.onClosePopup();
   }
 
   render() {
@@ -37,6 +51,10 @@ export default class Popup {
 
     const $PopupTimeCloseButton = document.createElement("button");
     $PopupTimeCloseButton.className = "PopupTimeCloseButton";
+    $PopupTimeCloseButton.addEventListener(
+      "click",
+      this.onCloseTodyPopup.bind(this)
+    );
 
     $PopupFooter.appendChild($PopupCloseButton);
     $PopupFooter.appendChild($PopupTimeCloseButton);
