@@ -20,6 +20,11 @@
   padding: 20px;
 }
 
+.PopupContent {
+  overflow-y: auto;
+  height: 100%;
+}
+
 .PopupBackground {
   display: block;
   width: 100%;

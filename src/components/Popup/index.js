@@ -38,6 +38,9 @@ export default class Popup {
     $PopupImage.alt = "Popup Image";
     $PopupImage.style.width = "100%";
 
+    const $PopupContent = document.createElement("div");
+    $PopupContent.className = "PopupContent";
+
     const $PopupFooter = document.createElement("div");
     $PopupFooter.className = "PopupFooter";
 
@@ -55,8 +58,9 @@ export default class Popup {
     $PopupFooter.appendChild($PopupCloseButton);
     $PopupFooter.appendChild($PopupTimeCloseButton);
 
-    $InnerPopup.appendChild($PopupImage);
-    $InnerPopup.appendChild($PopupFooter);
+    $InnerPopup.appendChild($PopupContent);
+    $PopupContent.appendChild($PopupImage);
+    $PopupContent.appendChild($PopupFooter);
 
     this.$container.appendChild($InnerPopup);
     this.$container.appendChild($PopupBackground);
