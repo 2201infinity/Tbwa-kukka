@@ -129,13 +129,34 @@
 
 @media screen and (max-width: 1024px) {
   #Header {
-    height: 110px;
+    height: 52px;
+    justify-content: inherit;
+  }
+  #Header .inner-shadow {
+    width: 100%;
   }
   .inner-shadow::after {
     background: #e7e4e4;
   }
 
+  .inner-shadow::before {
+    content: none;
+  }
+
   .inner-header {
+    width: auto;
+    justify-content: space-between;
+  }
+
+  #Header .inner-header .menu-logo div {
+    background-size: 626px 422.5px;
+    width: 167px;
+    height: 22px;
+    background-position: -383px -219px;
+    margin-left: 20px;
+  }
+
+  #Header .menu-list {
     display: none;
   }
 
@@ -144,7 +165,7 @@
     display: flex;
     flex-direction: column;
     height: 50px;
-    margin-bottom: 60px;
+    margin-top: 50px;
   }
 
   .res-nav div {
@@ -163,12 +184,35 @@
 
   .res-nav li {
     font-size: 15px;
-    height: 120px;
-    width: 150px;
-    padding-bottom: 20px;
+    height: 44px;
+    flex: 1;
     color: #787878;
+    justify-content: center;
     font-weight: 600;
-    margin-top: 8px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  #Header .user-menu {
+    width: auto;
+  }
+
+  #Header .user-menu li:first-child {
+    display: none;
+  }
+
+  #Header .user-menu li a {
+    width: 52px;
+    height: 52px;
+    display: block;
+  }
+
+  #Header .user-menu .user-menu-cart {
+    background-size: 626px 422.5px;
+    width: 21px;
+    height: 23.5px;
+    background-position: -604px -306px;
+    margin-left: 8px;
+    margin-top: 2px;
   }
 }
