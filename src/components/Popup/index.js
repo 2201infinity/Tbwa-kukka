@@ -1,4 +1,5 @@
 import { POPUP_CONTENT_IMAGE } from "../../utils/constants.js";
+import cookie from "../../utils/cookie.js";
 import "./styles.css";
 
 export default class Popup {
@@ -6,14 +7,7 @@ export default class Popup {
     this.$container = document.createElement("div");
     this.$container.id = "Popup";
     $target.appendChild(this.$container);
-    this.getCookiePopup() ? this.$container.remove() : this.render();
-  }
-
-  getCookiePopup() {
-    const cookiePopup = document.cookie
-      .split(";")
-      .find((element) => element.includes("Popup="));
-    return cookiePopup === undefined ? false : true;
+    cookie.get("Popup") ? this.$container.remove() : this.render();
   }
 
   onClosePopup() {
@@ -24,7 +18,7 @@ export default class Popup {
   onCloseTodyPopup() {
     const date = new Date();
     date.setTime(date.getTime() + 1 * 60 * 60 * 24 * 1000);
-    document.cookie = `Popup=${date.getTime()}; expires=${date.toUTCString()}; path=/`;
+    cookie.set("Popup", "true", date);
     this.onClosePopup();
   }
 
