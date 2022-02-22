@@ -60,10 +60,11 @@
 }
 
 .info-box {
-  display: block;
+  display: inline-block;
 }
 
 #Footer h3 {
+  display: inline-block;
   font-size: 22px;
   line-height: 33px;
   font-weight: 500;
@@ -106,13 +107,13 @@
 
 .info {
   margin-right: 18px;
-  font-size: 14px;
+  font-size: 11px;
   line-height: 25px;
   position: relative;
 }
 
 #Footer .copy {
-  font-size: 14px;
+  font-size: 11px;
   line-height: 25px;
 }
 
@@ -124,7 +125,7 @@
 }
 
 .footer-aside a {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #Footer .link:not(.end) {
@@ -132,11 +133,30 @@
 }
 
 #Footer .work-hour {
-  display: block;
   margin-left: 0;
   font-size: 14px;
   line-height: 33px;
   color: #9b9b9b;
+  display: block;
+}
+
+#Footer .web-btn {
+  display: none;
+}
+
+#Footer .mobile-btn {
+  margin-top: 20px;
+}
+
+#Footer .info:not(.end)::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 1px;
+  height: 13px;
+  background-color: #d3d3d3;
 }
 
 #Footer button {
@@ -148,12 +168,6 @@
   font-size: 13px;
   color: #ffffff;
   border: #9b9b9b 1px solid;
-}
-
-#Footer .inner-footer .contact-text {
-  font-size: 14px;
-  line-height: 20px;
-  color: #fff;
 }
 
 @media (min-width: 1024px) {
@@ -168,7 +182,11 @@
   }
 
   .info-box {
-    display: inline-block;
+    display: block;
+  }
+
+  .info {
+    font-size: 14px;
   }
 
   #Footer .work-hour {
@@ -177,14 +195,7 @@
   }
 
   #Footer .info:not(.end)::after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 6px;
-    right: -10px;
-    width: 1px;
-    height: 13px;
-    background-color: #d3d3d3;
+    top: 2px;
   }
 
   .facebook {
@@ -227,7 +238,20 @@
     left: auto;
   }
 
-  #Footer .inner-footer button {
+  .footer-aside a {
+    font-size: 14px;
+  }
+
+  #Footer .inner-footer .web-btn {
+    display: inline-block;
     margin-left: 17px;
+  }
+
+  #Footer .mobile-btn {
+    display: none;
+  }
+
+  #Footer .copy {
+    font-size: 14px;
   }
 }
